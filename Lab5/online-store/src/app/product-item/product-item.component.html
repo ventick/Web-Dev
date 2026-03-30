@@ -1,0 +1,25 @@
+<article class="product-card">
+  <img class="product-card__image" [src]="product().image" [alt]="product().name" />
+
+  <div class="product-card__content">
+    <div class="product-card__top">
+      <h3>{{ product().name }}</h3>
+      <span class="product-card__price">{{ product().price | currency: 'KZT' : 'symbol-narrow' : '1.0-0' }}</span>
+    </div>
+
+    <p class="product-card__description">{{ product().description }}</p>
+
+    <div class="product-card__meta">
+      <span>Rating: {{ product().rating }}/5</span>
+      <span>Likes: {{ product().likes }}</span>
+    </div>
+
+    <div class="product-card__actions">
+      <button type="button" class="product-card__button" (click)="likeProduct()">Like</button>
+      <button type="button" class="product-card__button product-card__button--danger" (click)="deleteProduct()">Delete</button>
+      <a class="product-card__button" [href]="product().link" target="_blank" rel="noopener noreferrer">Open</a>
+      <a class="product-card__button" [href]="getWhatsappShareLink()" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      <a class="product-card__button" [href]="getTelegramShareLink()" target="_blank" rel="noopener noreferrer">Telegram</a>
+    </div>
+  </div>
+</article>

@@ -1,0 +1,20 @@
+<section class="product-list">
+  <div class="product-list__header">
+    <h2>{{ categoryName() }}</h2>
+    <p>{{ visibleProducts().length }} product(s)</p>
+  </div>
+
+  @if (visibleProducts().length > 0) {
+    <div class="product-list__grid">
+      @for (product of visibleProducts(); track product.id) {
+        <app-product-item
+          [product]="product"
+          (liked)="handleLike($event)"
+          (deleted)="handleDelete($event)"
+        />
+      }
+    </div>
+  } @else {
+    <p class="product-list__empty">No products in this category.</p>
+  }
+</section>

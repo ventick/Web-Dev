@@ -1,0 +1,33 @@
+.product-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.product-list__header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+}
+
+.product-list__header h2,
+.product-list__header p {
+  margin: 0;
+}
+
+.product-list__header p {
+  color: #666;
+}
+
+.product-list__grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.product-list__empty {
+  margin: 0;
+  padding: 1rem;
+  background: #fff;
+  border: 1px solid #d8d8d8;
+  border-radius: 8px;
+}
