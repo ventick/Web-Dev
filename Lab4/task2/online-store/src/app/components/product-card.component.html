@@ -1,0 +1,63 @@
+<article class="card">
+  <div class="card__media">
+    <img class="card__image" [src]="currentImage()" [alt]="product().name" />
+    <div class="card__thumbs">
+      @for (image of product().images; track image; let index = $index) {
+        <button
+          type="button"
+          class="card__thumb"
+          [class.card__thumb--active]="selectedImageIndex() === index"
+          (click)="selectImage(index)"
+        >
+          <img [src]="image" [alt]="product().name + ' preview ' + (index + 1)" />
+        </button>
+      }
+    </div>
+  </div>
+
+  <div class="card__content">
+    <div class="card__header">
+      <h3>{{ product().name }}</h3>
+      <p class="card__price">{{ product().price | currency: 'KZT' : 'symbol-narrow' : '1.0-0' }}</p>
+    </div>
+
+    <div class="card__rating" [attr.aria-label]="'Rating ' + product().rating + ' out of 5'">
+      @for (_ of fullStars(); track $index) {
+        <span>★</span>
+      }
+      @if (hasHalfStar()) {
+        <span>☆</span>
+      }
+      @for (_ of emptyStars(); track $index) {
+        <span class="card__rating--muted">★</span>
+      }
+      <strong>{{ product().rating }}</strong>
+    </div>
+
+    <p class="card__description">{{ product().description }}</p>
+
+    <div class="card__actions">
+      <a class="card__button card__button--primary" [href]="product().link" target="_blank" rel="noopener noreferrer">
+        Open on Kaspi
+      </a>
+      <a
+        class="card__button"
+        [href]="getWhatsappShareLink()"
+        target="_blank"
+        rel="noopener noreferrer"
+        (click)="notifyShare()"
+      >
+        Share WhatsApp
+      </a>
+      <a
+        class="card__button"
+        [href]="getTelegramShareLink()"
+        target="_blank"
+        rel="noopener noreferrer"
+        (click)="notifyShare()"
+      >
+        Share Telegram
+      </a>
+    </div>
+  </div>
+</article>

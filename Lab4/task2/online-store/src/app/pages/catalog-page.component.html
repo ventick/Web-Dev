@@ -1,0 +1,12 @@
+<section class="catalog-header">
+  <div>
+    <p class="catalog-header__eyebrow">Kaspi product list</p>
+    <h1>Catalog</h1>
+  </div>
+</section>
+
+<section class="catalog-grid">
+  @for (product of products; track product.id) {
+    <app-product-card [product]="product" (shareRequested)="onShare($event)" />
+  }
+</section>

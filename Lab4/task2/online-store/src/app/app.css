@@ -1,0 +1,44 @@
+:host {
+  display: block;
+}
+
+.app-shell {
+  min-height: 100vh;
+  background: #f4f4f4;
+  color: #222;
+}
+
+.topbar {
+  background: #ffffff;
+  border-bottom: 1px solid #dcdcdc;
+}
+
+.topbar__inner {
+  width: min(1080px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+
+.brand {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.brand__eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #666;
+  font-weight: 600;
+}
+
+.brand__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.content {
+  width: min(1080px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 1.5rem 0 2rem;
+}
