@@ -1,0 +1,187 @@
+{
+  "info": {
+    "name": "Online Shop API",
+    "_postman_id": "d1f6d7e7-8ca8-4fdf-9a59-5f7f4b285d21",
+    "description": "Postman collection for Lab 9 Django REST Framework API.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Categories",
+      "item": [
+        {
+          "name": "Get All Categories",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/categories/",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "categories", ""]
+            }
+          }
+        },
+        {
+          "name": "Get Category by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/categories/1/",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "categories", "1", ""]
+            }
+          }
+        },
+        {
+          "name": "Get Products by Category",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/categories/1/products/",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "categories", "1", "products", ""]
+            }
+          }
+        },
+        {
+          "name": "Create Category",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Accessories\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/categories/",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "categories", ""]
+            }
+          }
+        },
+        {
+          "name": "Update Category",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Updated Category\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/categories/1/",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "categories", "1", ""]
+            }
+          }
+        },
+        {
+          "name": "Delete Category",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/api/categories/1/",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "categories", "1", ""]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Products",
+      "item": [
+        {
+          "name": "Get All Products",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/products/",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "products", ""]
+            }
+          }
+        },
+        {
+          "name": "Get Product by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/products/1/",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "products", "1", ""]
+            }
+          }
+        },
+        {
+          "name": "Create Product",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Test Product\",\n  \"price\": 12345,\n  \"description\": \"Created from Postman\",\n  \"count\": 3,\n  \"is_active\": true,\n  \"category\": 1\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/products/",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "products", ""]
+            }
+          }
+        },
+        {
+          "name": "Update Product",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Updated Product\",\n  \"price\": 54321,\n  \"description\": \"Updated from Postman\",\n  \"count\": 7,\n  \"is_active\": true,\n  \"category\": 1\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/products/1/",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "products", "1", ""]
+            }
+          }
+        },
+        {
+          "name": "Delete Product",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/api/products/1/",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "products", "1", ""]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://127.0.0.1:8000"
+    }
+  ]
+}
